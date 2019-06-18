@@ -11,12 +11,13 @@ over.addEventListener('mouseover', (event) => {
     });
     //Keydown event
     const downEvent = document.querySelector(' .intro p');
-    downEvent.addEventListener('keydown', keyEvent, false);
-         function keyEvent() {
-            if(event.keyCode == '13') {
-                event.target.style.backgroundColor = 'yellow';
-                setTimeout(() => {
-                    event.target.style.backgroundColor = '';
-                   }, 5000);
-               }
-         }
+    addEventListener("keydown", (event) => {
+        if(event.keyCode == 13)
+        downEvent.style.backgroundColor = 'yellow';
+    });
+  //Wheel event
+  const wheelEvent = document.querySelector('.content-section p');
+  wheelEvent.addEventListener('wheel', (event) => {
+    event.target.style.fontSize = '22px';
+  });
+    
