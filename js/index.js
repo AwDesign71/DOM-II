@@ -20,4 +20,10 @@ over.addEventListener('mouseover', (event) => {
   wheelEvent.addEventListener('wheel', (event) => {
     event.target.style.fontSize = '22px';
   });
-    
+ //Drag and Drop event
+   const dd = doucment.querySelector('.content-destination h2');
+   event.preventDefault();   
+  dd.addEventListener('mousemove', (event) => {
+   event.target.style.backgroundColor = 'grey';
+ });
+
