@@ -3,6 +3,7 @@
 const over = document.querySelector('header nav');
 let backgroundColor;
 over.addEventListener('mouseover', (event) => {
+   event.preventDefault();
     event.target.style.color = 'blue';
     //resting the color back
     setTimeout(() => {
@@ -21,9 +22,43 @@ over.addEventListener('mouseover', (event) => {
     event.target.style.fontSize = '22px';
   });
  //Drag and Drop event
-   const dd = doucment.querySelector('.content-destination h2');
-   event.preventDefault();   
-  dd.addEventListener('mousemove', (event) => {
-   event.target.style.backgroundColor = 'grey';
- });
+   const dd = document.querySelector('body .content-destination img');
+  dd.addEventListener('dragstart', (event) => {
+     event.preventDefault(); 
+     event.target.style.opacity = '0.2';
+ }, false);
+  dd.addEventListener('dragstart', (event) => {
+      event.target.style.opacity = '0.5'
+  })
+// load Event
+const imgLoad = document.querySelector('.intro h2');
+window.addEventListener('load', () => {
+  imgLoad.innerHTML = 'Fun Bus Weekend';
+});
+//focus event not working
+const fcEvent = document.querySelector('header nav');
+fcEvent.addEventListener('focus', (event) => {
+   event.target.style.backgroundColor = 'blue';
+});
+//resize event
 
+window.addEventListener("resize", windowSizing);
+let size = 0;
+function windowSizing() {
+  let content = size += 1;
+  document.querySelector('header h1').innerHTML = content;
+}
+//scroll
+window.addEventListener('scroll', function(){
+  console.log('Scrolled');
+});
+//select event not working
+const selectEvent = document.querySelector('.destination p');
+selectEvent.addEventListener('select', (event) => {
+  alert('Selected');
+});
+//dblclick
+const dblClick = document.querySelector('.img-content');
+dblClick.addEventListener('dblclick', (event) => {
+ event.target.style.border = '4px solid red ';
+});
