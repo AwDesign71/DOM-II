@@ -22,8 +22,13 @@ over.addEventListener('mouseover', (event) => {
     event.target.style.fontSize = '22px';
   });
  //Drag and Drop event
-   const dd = document.querySelector('body .content-destination img');
-  dd.addEventListener('dragstart', (event) => {
+ //Creating the virtual attribute for img
+  
+   const dd = document.querySelector('.content-destination img');
+   /* const att = document.createAttribute('draggable');
+   att.value = "";
+   dd.setAttributeNode(att); */
+    dd.addEventListener('dragstart', (event) => {
      event.preventDefault(); 
      event.target.style.opacity = '0.2';
  }, false);
